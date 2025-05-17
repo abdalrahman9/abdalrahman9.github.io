@@ -6,8 +6,12 @@
 </head>
 <body>
   <h2>Please verify you're human</h2>
+
   <form id="captcha-form">
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAABdu3PdKdvgnEJEB"></div>
+    <div class="cf-turnstile"
+         data-sitekey="0x4AAAAAABdu3PdKdvgnEJEB"
+         style="min-height: 65px;"></div>
+    <noscript>Please enable JavaScript to verify you're human.</noscript>
     <br>
     <button type="submit">Continue</button>
   </form>
@@ -16,11 +20,10 @@
     document.getElementById('captcha-form').addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const response = document.querySelector('[name="cf-turnstile-response"]').value;
+      const response = document.querySelector('[name="cf-turnstile-response"]')?.value;
       if (response) {
-        // Store flag in session storage and redirect
         sessionStorage.setItem('verifiedHuman', 'true');
-        window.location.href = 'index.html'; // or your main page
+        window.location.href = 'index.html';
       } else {
         alert('Please verify the checkbox.');
       }
