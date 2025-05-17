@@ -5,18 +5,26 @@
   <meta charset="UTF-8" />
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
+    @font-face {
+      font-family: Rubik;
+      src: url(Rubik-VariableFont_wght.9fcbb99e3b84bd35.ttf);
+    }
+  
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
+      min-height: 100vh;
+      background-color: #efeff0;
+      background-image: url(.pass_files/background.png);
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: auto;
+      font-family: Rubik, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: url(./pass_files/backgroundhajj.png) no-repeat center center fixed;
-      background-size: cover;
-      font-family: sans-serif;
     }
+  
     .cf-turnstile {
       min-height: 65px;
     }
